@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine_stock/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class MyHomePage extends StatelessWidget {
           'Medicine Stock',
         ),
       ),
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(

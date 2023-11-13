@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medicine_stock/menu.dart';
+
+import 'package:medicine_stock/screens/menu.dart';
 void main() {
   runApp(const MyApp());
 }
