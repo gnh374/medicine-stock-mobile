@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class ShopItem {
   final String name;
   final IconData icon;
-
-  ShopItem(this.name, this.icon);
+  final Color cardColor;
+  ShopItem(this.name, this.icon, this.cardColor);
 }
 
 class ShopCard extends StatelessWidget {
@@ -16,7 +16,7 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.indigo,
+      color:  item.cardColor, 
       child: InkWell(
         // Area responsive terhadap sentuhan
         onTap: () {
@@ -25,13 +25,12 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
-          // Navigate ke route yang sesuai (tergantung jenis tombol)
-          if (item.name == "Tambah Item") {
+
+            if (item.name == "Tambah Item") {
             Navigator.push(context,
             MaterialPageRoute(builder: (context) => const ShopFormPage()));
            
           }
-
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
