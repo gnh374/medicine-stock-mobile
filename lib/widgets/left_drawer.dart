@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine_stock/screens/list_product.dart';
 import 'package:medicine_stock/screens/menu.dart';
 import 'package:medicine_stock/screens/medicine_form.dart';
 
@@ -62,6 +63,17 @@ class LeftDrawer extends StatelessWidget {
                   ));
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Daftar Item'),
+            onTap: () {
+                // Route menu ke halaman produk
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductPage()),
+                );
+            },
+        ),
         ],
       ),
     );
