@@ -16,11 +16,17 @@ class _ProductPageState extends State<ProductPage> {
 Future<List<Product>> fetchProduct() async {
     // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
-        'http://localhost:8000/json/');
+        'https://gabriella-naomi21-tugas.pbp.cs.ui.ac.id./json/');
     var response = await http.get(
         url,
         headers: {"Content-Type": "application/json"},
     );
+    //  var url = Uri.parse(
+    //     'http:localhost:8000/json/');
+    // var response = await http.get(
+    //     url,
+    //     headers: {"Content-Type": "application/json"},
+    // );
 
     // melakukan decode response menjadi bentuk json
     var data = jsonDecode(utf8.decode(response.bodyBytes));
